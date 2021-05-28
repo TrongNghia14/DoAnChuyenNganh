@@ -1,0 +1,43 @@
+﻿@model Do_An_WTT.Models.NHACUNGCAP
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div style="margin: 25px auto 100px auto;">
+    <h2 style="text-align:center">Xóa thông tin nhà cung cấp</h2>
+    <div>
+        <hr />
+        <table class="table table-striped">
+            <tr>
+                <td>Tên nhà cung cấp</td>
+                <td>@Html.DisplayFor(model => model.TenNCC)</td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td>@Html.DisplayFor(model => model.DienThoai)</td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td>@Html.DisplayFor(model => model.DiaChi)</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td colspan="2"><h4 style="text-align:center">Bạn có chắc muốn xóa nhà cung cấp này?</h4></td>
+            </tr>
+        </table>
+        @using(Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" style="display:flex; justify-content:center">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a class="nav-link" href="@Url.Action("Index", "QLNhaCungCap")">
+                    <span>Back to List</span>
+                </a>
+            </div>
+        }
+    </div>
+</div>

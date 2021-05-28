@@ -1,0 +1,60 @@
+﻿@model Do_An_WTT.Models.CA
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="margin: 25px auto 100px auto;">
+    <h2 style="text-align:center">Xóa thông tin cá</h2>
+    <div>
+        <hr />
+        <table class="table table-striped">
+            <tr>
+                <td>Tên cá</td>
+                <td>@Html.DisplayFor(model => model.TenCa))</td>
+            </tr>
+            <tr>
+                <td>Giá bán</td>
+                <td>@Html.DisplayFor(model => model.GiaBan)</td>
+            </tr>
+            <tr>
+                <td>Số lượng tồn</td>
+                <td>@Html.DisplayFor(model => model.SoLuongTon)</td>
+            </tr>
+            <tr>
+                <td>Ngày cập nhật</td>
+                <td>@Html.DisplayFor(model => model.NgayCapNhap)</td>
+            </tr>
+            <tr>
+                <td>Ảnh bìa</td>
+                <td>@Html.DisplayFor(model => model.AnhBia)</td>
+            </tr>
+            <tr>
+                <td>Mô tả</td>
+                <td>@Html.DisplayFor(model => model.MoTa)</td>
+            </tr>
+            <tr>
+                <td>Mã nhà cung cấp</td>
+                <td>@Html.DisplayFor(model => model.MaNCC)</td>
+            </tr>
+            <tr>
+                <td>Mã loại</td>
+                <td>@Html.DisplayFor(model => model.MaLoai)</td>
+            </tr>
+            <tr>
+                <td colspan="2"><h4 style="text-align:center">Bạn có chắc muốn xóa cá này?</h4></td>
+            </tr>
+        </table>
+        @using(Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" style="display:flex; justify-content:center">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a class="nav-link" href="@Url.Action("Index", "QLCa")">
+                    <span>Back to List</span>
+                </a>
+            </div>
+        }
+    </div>
+</div>

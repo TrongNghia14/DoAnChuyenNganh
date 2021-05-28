@@ -1,0 +1,82 @@
+﻿@model Do_An_WTT.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="margin: 25px auto 100px auto; display:flex; justify-content:center">
+    <div>
+        <h2 style="text-align:center; margin-top:25px">Chi tiết khách hàng: @Html.DisplayFor(model => model.HoTen)</h2>
+        <div>
+            <hr />
+            <dl>
+                <dt>
+                    Họ tên:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HoTen)
+                </dd>
+                <dt>
+                    Username:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TaiKhoan)
+                </dd>
+
+                <dt>
+                    Password:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.MatKhau)
+                </dd>
+
+                <dt>
+                    Email:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    Địa chỉ:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DiaChiKH)
+                </dd>
+
+                <dt>
+                    Số điện thoại:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DienThoaiKH)
+                </dd>
+
+                <dt>
+                    Ngày sinh:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.NgaySinh)
+                </dd>
+
+            </dl>
+        </div>
+        <div style="display:flex; justify-content:center; font-size:larger">
+            <a class="btn btn-success" href="@Url.Action("Edit", "QLTaiKhoanKhach", new { id = Model.MaKH })">
+                <span>Edit</span>
+            </a>
+            <a class="nav-link" href="@Url.Action("Index", "QLTaiKhoanKhach")">
+                <span>Back to List</span>
+            </a>
+        </div>    
+    </div>
+</div>
+
+

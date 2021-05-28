@@ -1,0 +1,60 @@
+﻿@model Do_An_WTT.Models.NHACUNGCAP
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="margin: 25px auto 100px auto;display:flex; justify-content:center">
+    <div>
+        <h2 style="text-align:center; margin-top:25px">Chi tiết nhà cung cấp: @Html.DisplayFor(model => model.TenNCC)</h2>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    Tên nhà cung cấp:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TenNCC)
+                </dd>
+
+                <dt>
+                    Số điện thoại:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DienThoai)
+                </dd>
+
+                <dt>
+                    Địa chỉ:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DiaChi)
+                </dd>
+
+                <dt>
+                    Email:
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+            </dl>
+        </div>
+        <div style="display:flex; justify-content:center; font-size:larger">
+            <a class="btn btn-success" href="@Url.Action("Edit", "QLNhaCungCap", new { id = Model.MaNCC })">
+                <span>Edit</span>
+            </a>
+            <a class="nav-link" href="@Url.Action("Index", "QLNhaCungCap")">
+                <span>Back to List</span>
+            </a>
+        </div>
+    </div> 
+</div>
+
+
+                    

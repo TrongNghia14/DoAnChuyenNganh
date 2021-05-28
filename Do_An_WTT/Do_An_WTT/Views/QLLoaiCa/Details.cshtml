@@ -1,0 +1,33 @@
+﻿@model Do_An_WTT.Models.PHANLOAI
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="margin: 25px auto 100px auto; display:flex; justify-content:center">
+    <h2 style="text-align:center; margin-top:25px">Chi tiết loại cá: @Html.DisplayFor(model => model.TenLoai)</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Tên loại:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TenLoai)
+            </dd>
+
+        </dl>
+    </div>
+    <div style="display:flex; justify-content:center; font-size:larger">
+        <a class="btn btn-success" href="@Url.Action("Edit", "QLLoaiCa", new { id = Model.MaLoai })">
+            <span>Edit</span>
+        </a>
+        <a class="nav-link" href="@Url.Action("Index", "QLLoaiCa")">
+            <span>Back to List</span>
+        </a>
+    </div>
+</div>
+
+                        

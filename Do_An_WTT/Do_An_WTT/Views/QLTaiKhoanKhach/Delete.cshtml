@@ -1,0 +1,58 @@
+﻿@model Do_An_WTT.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="margin: 25px auto 100px auto;">
+    <h2 style="text-align:center">Xóa thông tin khách hàng</h2>
+    <div>
+        <hr />
+        <table class="table table-striped">
+            <tr>
+                <td>Họ tên</td>
+                <td>@Html.DisplayFor(model => model.HoTen)</td>
+            </tr>
+            <tr>
+                <td>Tài khoản</td>
+                <td>@Html.DisplayFor(model => model.TaiKhoan)</td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td>@Html.DisplayFor(model => model.MatKhau)</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>@Html.DisplayFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td>@Html.DisplayFor(model => model.DiaChiKH)</td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td>@Html.DisplayFor(model => model.DienThoaiKH)</td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td>@Html.DisplayFor(model => model.NgaySinh)</td>
+            </tr>
+            <tr>
+                <td colspan="2"><h4 style="text-align:center">Bạn có chắc muốn xóa tài khoản này?</h4></td>
+            </tr>
+        </table>
+        @using(Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color" style="display:flex; justify-content:center">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a class="nav-link" href="@Url.Action("Index", "QLTaiKhoanKhach")">
+                    <span>Back to List</span>
+                </a>
+            </div> 
+                            
+        }
+    </div>
+</div>
+                    

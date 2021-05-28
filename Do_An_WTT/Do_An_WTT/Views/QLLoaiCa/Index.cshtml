@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Do_An_WTT.Models.PHANLOAI>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div style="margin: 25px auto 100px auto;">
+    <div style="width:50%; margin:auto">
+        <h2 style="text-align:center">Danh sách loại cá</h2>
+        <p style="text-align:right; font-size:25px; margin-top:25px">
+            <button type="button" class="btn btn-outline-primary">@Html.ActionLink("Thêm loại cá", "Create")</button>
+        </p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tên loại</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenLoai)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.MaLoai }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.MaLoai }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.MaLoai })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

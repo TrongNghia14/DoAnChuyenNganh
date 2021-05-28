@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Do_An_WTT.Models.NHACUNGCAP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div style="margin: 25px auto 100px auto;">
+    <h2 style="text-align:center">Danh sách nhà cung cấp cá</h2>
+    <p style="text-align:right; font-size:25px; margin-top:25px">
+        <button type="button" class="btn btn-outline-primary">@Html.ActionLink("Thêm nhà cung cấp", "Create")</button>
+    </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Tên nhà cung cấp</th>
+                <th>Số diện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TenNCC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DienThoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiaChi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MaNCC }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.MaNCC }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MaNCC })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
